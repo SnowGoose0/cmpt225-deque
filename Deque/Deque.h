@@ -10,11 +10,11 @@ class Deque
 {
   public:
     Deque() {  
-         theCapacity = 8 ;
+         theCapacity = 8;
          objects = new Object[ theCapacity ]; 
-         theSize = 0 ;
-         front = 0 ; 
-         back = 0 ; 
+         theSize = 0;
+         front = 0; 
+         back = 0; 
       }
       
     ~Deque( )
@@ -162,7 +162,7 @@ class Deque
           return objects[0 + index];
         }
       } else {
-        if (index < back - front) { return objects[front + 1 + index]; }
+        if (index < back - front) { return objects[front + index]; }
       }
       return objects[0];
     }
