@@ -39,7 +39,7 @@ void test1() {
     d.display();
     d.ddisplay();
 
-    cout << "---------------------------------------------------\n";
+    cout << "---------------------------------------------------\n\n\ns";
 
 }
 
@@ -54,6 +54,10 @@ void test2() {
     cout << "\n***Enqueue 6 INTS (1-6) THEN Dequeue 4 INTS\n\n";
     for (int i = 1; i <= 6; i++) {
         d.enqueue(i);
+    }
+
+    for (int i = 0; i < 4; i++) {
+        d.dequeue();
     }
 
     d.display();
@@ -71,7 +75,7 @@ void test2() {
     cout << "***Clear the Deque\n\n";
     d.display();
 
-    cout << "\n***Enqueue 5x INTS (1-5) THEN Dequeue 3 INT\n\n";
+    cout << "\n***Enqueue 5 INTS (1-5) THEN Dequeue 3 INT\n\n";
     for (int i = 1; i <= 5; i++) {
         d.enqueue(i);
     }
@@ -89,7 +93,7 @@ void test2() {
     d.display();
     d.ddisplay();
 
-    cout << "---------------------------------------------------\n";
+    cout << "---------------------------------------------------\n\n\n";
 
 }
 
@@ -101,7 +105,7 @@ void test3() {
     Deque<int> d;
     d.display();
 
-    cout << "\n***Enqueue INTS (1-16) THEN Dequeue 4 INTS\n\n";
+    cout << "***Enqueue INTS (1-16) THEN Dequeue 4 INTS\n\n";
     for (int i = 1; i <= 16; i++) {
         d.enqueue(i);
     }
@@ -116,14 +120,7 @@ void test3() {
     for (int i = 400; i <= 405; i++) {
         d.jump(-i);
     }
-    
-    d.display();
-    d.ddisplay();
 
-    cout << "***Jump 6 INTS (-400...-405)\n\n";
-    for (int i = 400; i <= 405; i++) {
-        d.jump(-i);
-    }
     
     d.display();
     d.ddisplay();
@@ -138,8 +135,8 @@ void test3() {
 
     cout << "***Clear List\n\n";
     d.clear();
-    cout << "***Reserve 2\n\n";
-    d.reserve(3);
+    cout << "***Reserve (Resize) 2\n\n";
+    d.reserve(2);
     d.display();
     d.ddisplay();
 
@@ -159,7 +156,7 @@ void test3() {
     d.display();
     d.ddisplay();
 
-    cout << "---------------------------------------------------\n";
+    cout << "---------------------------------------------------\n\n\n";
 }
 
 void test4() {
@@ -217,13 +214,39 @@ void test4() {
     }
     d2.display();
     d2.ddisplay();
+
+    cout << "---------------------------------------------------\n\n\n";
+}
+
+void test5() {
+    cout << "\n\n";
+    cout << "---------------------------------------------------\n";
+    cout << "TEST - 5\n\n";
+    cout << "*Instantiate Empty INT Deque\n\n";
+    Deque<int> d;
+    d.display();
+    d.ddisplay();
+
+    cout << "\n***Dequeue from the Empty deque\n\n";
+    d.dequeue();
+    d.display();
+    d.ddisplay();
+
+    cout << "***Eject from the Empty deque\n\n";
+    d.eject();
+    d.display();
+    d.ddisplay();
+
+    cout << "---------------------------------------------------\n\n\n";
+
 }
 
 int main( )
 {
-    // test1();
-    // test2();
-    // test3();
+    test1();
+    test2();
+    test3();
     test4();
+    test5();
     return 0;
 }
