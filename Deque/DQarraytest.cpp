@@ -136,7 +136,7 @@ void test3() {
     idx = rand() % 9;
     curChar = dc[idx];
     newChar = (char)(97 + (rand() % 26));
-    cout << "The current char at dc[" << idx << "] is " << "'" << curChar << "' -> Set dc[" << idx << "] to " << "'" << newChar << "'\n";
+    cout << "The current char at dc[" << idx << "] is " << "'" << curChar << "' -> Set dc[" << idx << "] to " << "'" << newChar << "'\n\n";
 
     dc[idx] = newChar;
 
@@ -144,6 +144,48 @@ void test3() {
     dc.ddisplay();
 
 
+    cout << "\n\n\n";
+    cout << "*Instantiate Empty String Deque: ds\n\n";
+    Deque<string> ds;
+
+    cout << "***Enqueue Strings: 'hello' 'world' 'good' 'morning' 'afternoon' 'evening' 'night'\n\n";
+    ds.enqueue("hello");
+    ds.enqueue("world");
+    ds.enqueue("good");
+    ds.enqueue("morning");
+    ds.enqueue("afternoon");
+    ds.enqueue("evening");
+    ds.enqueue("night");
+
+    ds.display();
+    ds.ddisplay();
+
+    cout << "***Retrieve strings at random indices and set them to 'bruh'\n\n";
+    
+    int idxx = rand() % 7;
+    string curStr = ds[idxx];
+    string newString = "bruh";
+    cout << "The current string at ds[" << idxx << "] is " << "'" << curStr << "' -> Set dc[" << idxx << "] to " << "'" << newString << "'\n";
+
+    ds[idxx] = newString;
+
+    idxx = rand() % 9;
+    curStr = ds[idxx];
+
+    cout << "The current string at ds[" << idxx << "] is " << "'" << curStr << "' -> Set dc[" << idxx << "] to " << "'" << newString << "'\n";
+
+    ds[idxx] = newString;
+
+    idxx = rand() % 9;
+    curStr = ds[idxx];
+
+    cout << "The current string at ds[" << idxx << "] is " << "'" << curStr << "' -> Set dc[" << idxx << "] to " << "'" << newString << "'\n\n";
+
+
+    ds.display();
+    ds.ddisplay();
+
+    cout << "---------------------------------------------------\n";
 
 }
 
