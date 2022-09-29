@@ -10,6 +10,7 @@ void test1() {
     cout << "*Instantiate Empty Deque\n\n";
     Deque<int> d;
     d.display();
+    cout << endl << endl;
 
     cout << "\n***Enqueue INTS 1-5\n\n";
     for (int i = 1; i <= 5; i++) {
@@ -17,6 +18,7 @@ void test1() {
     }
     d.display();
     d.ddisplay();
+    cout << endl << endl;
 
     cout << "***Dequeue 3 INTS\n\n";
     for (int i = 1; i <= 3; i++) {
@@ -24,6 +26,7 @@ void test1() {
     }
     d.display();
     d.ddisplay();
+    cout << endl << endl;
 
     cout << "***Jump 2 INTS (-1 and -2)\n\n";
     for (int i = 1; i <= 2; i++) {
@@ -31,15 +34,29 @@ void test1() {
     }
     d.display();
     d.ddisplay();
+    cout << endl << endl;
 
-    cout << "***Eject 4 INTS\n\n";
-    for (int i = 1; i <= 4; i++) {
+    cout << "***Eject 2 INTS\n\n";
+    for (int i = 1; i <= 2; i++) {
         d.eject();
     }
     d.display();
     d.ddisplay();
+    cout << endl << endl;
 
-    cout << "---------------------------------------------------\n\n\ns";
+    cout << "***Reserve 19 (Expand the Deque to 19 slots)\n\n";
+    d.reserve(19);
+    d.display();
+    d.ddisplay();
+    cout << endl << endl;
+
+    cout << "***Clear the Deque\n\n";
+    d.clear();
+    d.display();
+    d.ddisplay();
+    cout << endl << endl;
+
+    cout << "---------------------------------------------------\n\n\n";
 
 }
 
@@ -50,6 +67,7 @@ void test2() {
     cout << "*Instantiate Empty Deque\n\n";
     Deque<int> d;
     d.display();
+    cout << endl << endl;
 
     cout << "\n***Enqueue 6 INTS (1-6) THEN Dequeue 4 INTS\n\n";
     for (int i = 1; i <= 6; i++) {
@@ -62,6 +80,7 @@ void test2() {
 
     d.display();
     d.ddisplay();
+    cout << endl << endl;
 
     cout << "***Enqueue 6 INTS (-101...-106)\n\n";
     for (int i = 101; i <= 106; i++) {
@@ -70,91 +89,143 @@ void test2() {
 
     d.display();
     d.ddisplay();
+    cout << endl << endl;
+
+    cout << "***Dequeue 6 INTS\n\n";
+    for (int i = 1; i <= 6; i++) {
+        d.dequeue();
+    }
+
+    d.display();
+    d.ddisplay();
+    cout << endl << endl;
 
     d.clear();
     cout << "***Clear the Deque\n\n";
     d.display();
+    cout << endl << endl;
 
-    cout << "\n***Enqueue 5 INTS (1-5) THEN Dequeue 3 INT\n\n";
+    cout << "\n***Jump 5 INTS (1-5) THEN Eject 3 INT\n\n";
     for (int i = 1; i <= 5; i++) {
-        d.enqueue(i);
+        d.jump(i);
     }
-    d.dequeue();
-    d.dequeue();
-    d.dequeue();
+    d.eject();
+    d.eject();
+    d.eject();
     d.display();
     d.ddisplay();
+    cout << endl << endl;
 
-    cout << "\n***Jump 6 INTS (-201...-206)\n\n";
+    cout << "\n***Enqueue 6 INTS (-201...-206)\n\n";
     for (int i = 201; i <= 206; i++) {
-        d.jump(-i);
+        d.enqueue(-i);
     }
 
     d.display();
     d.ddisplay();
+    cout << endl << endl;
+
+    cout << "***Eject 5 INTS\n\n";
+    for (int i = 1; i <= 5; i++) {
+        d.eject();
+    }
+
+    d.display();
+    d.ddisplay();
+    cout << endl << endl;
 
     cout << "---------------------------------------------------\n\n\n";
 
 }
 
 void test3() {
-    cout << "\n\n";
+        cout << "\n\n";
     cout << "---------------------------------------------------\n";
     cout << "TEST - 3\n\n";
     cout << "*Instantiate Empty Deque\n\n";
     Deque<int> d;
     d.display();
+    cout << endl << endl;
 
-    cout << "***Enqueue INTS (1-16) THEN Dequeue 4 INTS\n\n";
-    for (int i = 1; i <= 16; i++) {
+    cout << "***Enqueue 8 INTS (1-8)\n\n";
+    for (int i = 1; i <= 8; i++) {
         d.enqueue(i);
-    }
-    for (int i = 1; i <= 4; i++) {
-        d.dequeue();
     }
 
     d.display();
     d.ddisplay();
+    cout << endl << endl;
 
-    cout << "***Jump 6 INTS (-400...-405)\n\n";
-    for (int i = 400; i <= 405; i++) {
+    cout << "***Enqueue 5 INTS (401-405) \n\n";
+    for (int i = 401; i <= 405; i++) {
+        d.enqueue(i);
+    }
+
+    d.display();
+    d.ddisplay();
+    cout << endl << endl;
+
+
+    cout << "***Jump 4 INTS (-1 ... -4)\n\n";
+    for (int i = 1; i <= 4; i++) {
         d.jump(-i);
     }
 
-    
     d.display();
     d.ddisplay();
+    cout << endl << endl;
 
-    cout << "***Enqueue 35 INTS (21...55)\n\n";
-    for (int i = 21; i <= 55; i++) {
-        d.enqueue(i);
+    cout << "***Jump 5 INTS (-101 ... -105)\n\n";
+    for (int i = 101; i <= 105; i++) {
+        d.jump(-i);
     }
 
     d.display();
     d.ddisplay();
+    cout << endl << endl;
 
-    cout << "***Clear List\n\n";
+    cout << "***Clear and Reset List\n\n";
     d.clear();
-    cout << "***Reserve (Resize) 2\n\n";
-    d.reserve(2);
     d.display();
     d.ddisplay();
+    cout << endl << endl;
 
-    cout << "***Jump 5 INTS (1...5)\n\n";
-    for (int i = 1; i <= 5; i++) {
-        d.jump(i);
+
+    cout << "***Jump 8 INTS (-1 ... -8)\n\n";
+    for (int i = 1; i <= 8; i++) {
+        d.jump(-i);
     }
 
     d.display();
     d.ddisplay();
+    cout << endl << endl;
 
-    cout << "***Enqueue 4 INTS (1..4)\n\n";
-    for (int i = 6; i <= 9; i++) {
+    cout << "***Jump 5 INTS (-100 ... -8104)\n\n";
+    for (int i = 100; i <= 104; i++) {
+        d.jump(-i);
+    }
+
+    d.display();
+    d.ddisplay();
+    cout << endl << endl;
+
+    cout << "***Enqueue 4 INTS (1 ... 4)\n\n";
+    for (int i = 1; i <= 4; i++) {
         d.enqueue(i);
     }
 
     d.display();
     d.ddisplay();
+    cout << endl << endl;
+
+    cout << "***Enqueue 5 INTS (995 ... 999)\n\n";
+    for (int i = 995; i <= 999; i++) {
+        d.enqueue(i);
+    }
+
+    d.display();
+    d.ddisplay();
+    cout << endl << endl;
 
     cout << "---------------------------------------------------\n\n\n";
 }
@@ -175,6 +246,7 @@ void test4() {
     }
     d.display();
     d.ddisplay();
+    cout << endl << endl;
 
     cout << "***Jump 10 CHARS ('0' - '9')\n\n";
     for (int i = 0; i <= 6; i++) {
@@ -183,6 +255,7 @@ void test4() {
 
     d.display();
     d.ddisplay();
+    cout << endl << endl;
 
     cout << "***Eject 11 CHARS\n\n";
     for (int i = 0; i <= 12; i++) {
@@ -190,6 +263,7 @@ void test4() {
     }
     d.display();
     d.ddisplay();
+    cout << endl << endl;
 
     cout << "\n***Instantiate Empty CHAR Deque\n\n";
     Deque<string> d2;
@@ -200,12 +274,14 @@ void test4() {
     d2.enqueue("day");
     d2.display();
     d2.ddisplay();
+    cout << endl << endl;
 
     cout << "***Jump \"have\", \"A\" \n\n";
     d2.jump("have");
     d2.jump("A");
     d2.display();
     d2.ddisplay();
+    cout << endl << endl;
 
     cout << "***Eject once THEN Enqueue\"morning\" 5 times\n\n";
     d2.eject();
@@ -214,32 +290,11 @@ void test4() {
     }
     d2.display();
     d2.ddisplay();
+    cout << endl << endl;
 
     cout << "---------------------------------------------------\n\n\n";
 }
 
-void test5() {
-    cout << "\n\n";
-    cout << "---------------------------------------------------\n";
-    cout << "TEST - 5\n\n";
-    cout << "*Instantiate Empty INT Deque\n\n";
-    Deque<int> d;
-    d.display();
-    d.ddisplay();
-
-    cout << "\n***Dequeue from the Empty deque\n\n";
-    d.dequeue();
-    d.display();
-    d.ddisplay();
-
-    cout << "***Eject from the Empty deque\n\n";
-    d.eject();
-    d.display();
-    d.ddisplay();
-
-    cout << "---------------------------------------------------\n\n\n";
-
-}
 
 int main( )
 {
@@ -247,6 +302,5 @@ int main( )
     test2();
     test3();
     test4();
-    test5();
     return 0;
 }
