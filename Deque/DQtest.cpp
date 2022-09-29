@@ -309,7 +309,6 @@ void test4() {
     cout << endl << endl;
 
     cout << "***Dequeue 4 times\n\n";
-    d2.eject();
     for (int i = 0; i < 4; i++) {
         string x = d2.dequeue();
         cout << "dequeued: " << x << "\n";
