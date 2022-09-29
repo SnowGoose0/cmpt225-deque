@@ -165,21 +165,24 @@ void test3() {
     int idxx = rand() % 7;
     string curStr = ds[idxx];
     string newString = "bruh";
-    cout << "The current string at ds[" << idxx << "] is " << "'" << curStr << "' -> Set dc[" << idxx << "] to " << "'" << newString << "'\n";
+    cout << "The current string at ds[" << idxx << "] is " << "'" << curStr << "' -> Set ds[" << idxx << "] to " << "'" << newString << "'\n";
 
     ds[idxx] = newString;
 
     idxx = rand() % 9;
     curStr = ds[idxx];
 
-    cout << "The current string at ds[" << idxx << "] is " << "'" << curStr << "' -> Set dc[" << idxx << "] to " << "'" << newString << "'\n";
+    cout << "The current string at ds[" << idxx << "] is " << "'" << curStr << "' -> Set ds[" << idxx << "] to " << "'" << newString << "'\n";
 
     ds[idxx] = newString;
 
     idxx = rand() % 9;
     curStr = ds[idxx];
 
-    cout << "The current string at ds[" << idxx << "] is " << "'" << curStr << "' -> Set dc[" << idxx << "] to " << "'" << newString << "'\n\n";
+    cout << "The current string at ds[" << idxx << "] is " << "'" << curStr << "' -> Set ds[" << idxx << "] to " << "'" << newString << "'\n\n";
+
+    idxx = rand() % 9;
+    curStr = ds[idxx];
 
 
     ds.display();
