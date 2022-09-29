@@ -103,7 +103,12 @@ class Deque
 
     Object eject() { // Remove and return the object at the back 
         // Implement this 
-        Object temp = objects[back];
+        Object temp;
+        if (back-1 < 0) {
+          temp = objects[theCapacity - 1];
+        } else {
+          temp = objects[back-1];
+        }
         if (theSize) {
           theSize--;
           back = (theCapacity + ((back - 1) % theCapacity)) % theCapacity;
@@ -147,7 +152,7 @@ class Deque
 
         cout << "[ ";
         for (int i = 0; i < theCapacity; i++) {
-          cout << objects[i] << ", ";
+          cout << i << "=" << objects[i] << ", ";
         }
         cout << "]" << "\n\n";
     }

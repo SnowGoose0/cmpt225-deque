@@ -22,7 +22,8 @@ void test1() {
 
     cout << "***Dequeue 3 INTS\n\n";
     for (int i = 1; i <= 3; i++) {
-        d.dequeue();
+        int x = d.dequeue();
+        cout << "dequeued: " << x << "\n";
     }
     d.display();
     d.ddisplay();
@@ -38,7 +39,8 @@ void test1() {
 
     cout << "***Eject 2 INTS\n\n";
     for (int i = 1; i <= 2; i++) {
-        d.eject();
+        int x = d.eject();
+        cout << "ejected: " << x << "\n";
     }
     d.display();
     d.ddisplay();
@@ -91,9 +93,10 @@ void test2() {
     d.ddisplay();
     cout << endl << endl;
 
-    cout << "***Dequeue 6 INTS\n\n";
+    cout << "***Eject 6 INTS\n\n";
     for (int i = 1; i <= 6; i++) {
-        d.dequeue();
+        int x = d.eject();
+        cout << "ejected: " << x << "\n";
     }
 
     d.display();
@@ -116,18 +119,19 @@ void test2() {
     d.ddisplay();
     cout << endl << endl;
 
-    cout << "\n***Enqueue 6 INTS (-201...-206)\n\n";
+    cout << "\n***Jump 6 INTS (-201...-206)\n\n";
     for (int i = 201; i <= 206; i++) {
-        d.enqueue(-i);
+        d.jump(-i);
     }
 
     d.display();
     d.ddisplay();
     cout << endl << endl;
 
-    cout << "***Eject 5 INTS\n\n";
+    cout << "***Dequeue 5 INTS\n\n";
     for (int i = 1; i <= 5; i++) {
-        d.eject();
+        int x = d.dequeue();
+        cout << "dequeued: " << x << "\n";
     }
 
     d.display();
@@ -248,7 +252,7 @@ void test4() {
     d.ddisplay();
     cout << endl << endl;
 
-    cout << "***Jump 10 CHARS ('0' - '9')\n\n";
+    cout << "***Jump 6 CHARS ('0' - '9')\n\n";
     for (int i = 0; i <= 6; i++) {
         d.jump(num[i]);
     }
@@ -257,9 +261,20 @@ void test4() {
     d.ddisplay();
     cout << endl << endl;
 
-    cout << "***Eject 11 CHARS\n\n";
-    for (int i = 0; i <= 12; i++) {
-        d.eject();
+    cout << "***Dequeue 4 CHARS \n\n";
+    for (int i = 0; i <= 3; i++) {
+        char c =d.dequeue();
+        cout << "dequeued: " << c << "\n";
+    }
+
+    d.display();
+    d.ddisplay();
+    cout << endl << endl;
+
+    cout << "***Eject 10 CHARS\n\n";
+    for (int i = 0; i <= 9; i++) {
+        char c = d.eject();
+        cout << "ejected: " << c << "\n";
     }
     d.display();
     d.ddisplay();
@@ -284,9 +299,20 @@ void test4() {
     cout << endl << endl;
 
     cout << "***Eject once THEN Enqueue\"morning\" 5 times\n\n";
-    d2.eject();
+    string str = d2.eject();
+    cout << "ejected: " << str << "\n";
     for (int i = 0; i < 5; i++) {
         d2.enqueue("morning");
+    }
+    d2.display();
+    d2.ddisplay();
+    cout << endl << endl;
+
+    cout << "***Dequeue 4 times\n\n";
+    d2.eject();
+    for (int i = 0; i < 4; i++) {
+        string x = d2.dequeue();
+        cout << "dequeued: " << x << "\n";
     }
     d2.display();
     d2.ddisplay();
@@ -299,8 +325,8 @@ void test4() {
 int main( )
 {
     test1();
-    test2();
-    test3();
-    test4();
+    // test2();
+    // test3();
+    // test4();
     return 0;
 }
