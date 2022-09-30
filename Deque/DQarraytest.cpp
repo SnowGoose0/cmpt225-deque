@@ -1,4 +1,4 @@
-#include "Deque.h"
+#include "deque.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>
