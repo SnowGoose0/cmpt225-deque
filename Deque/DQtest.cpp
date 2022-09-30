@@ -280,7 +280,7 @@ void test4() {
     d.ddisplay();
     cout << endl << endl;
 
-    cout << "\n***Instantiate Empty CHAR Deque\n\n";
+    cout << "\n***Instantiate Empty STRING Deque\n\n";
     Deque<string> d2;
     d2.display();
 
