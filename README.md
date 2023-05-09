@@ -1,2 +1,2 @@
 # Deque Data-Structure
-## CMPT225
+## For CMPT225
